@@ -1,0 +1,68 @@
+{
+	"name": "fanaStick",
+	"plugin-id": "Sprite",
+	"sid": 760924705120046,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "radius",
+			"type": "number",
+			"desc": "",
+			"sid": 787841155472530
+		},
+		{
+			"name": "XP",
+			"type": "number",
+			"desc": "",
+			"sid": 643117066244706
+		},
+		{
+			"name": "YP",
+			"type": "number",
+			"desc": "",
+			"sid": 309968646077059
+		},
+		{
+			"name": "dist",
+			"type": "number",
+			"desc": "",
+			"sid": 114323472798176
+		},
+		{
+			"name": "conAngle",
+			"type": "number",
+			"desc": "",
+			"sid": 425134603028661
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4508846,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 263500953244215,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

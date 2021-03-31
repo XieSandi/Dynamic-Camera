@@ -9,6 +9,26 @@
 			"behaviorId": "TileMovement",
 			"name": "TileMovement",
 			"sid": 183145097869558
+		},
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 902367478130715
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 897742623163958
+		},
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 349512481927068
+		},
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 902635747925126
 		}
 	],
 	"effectTypes": [],
@@ -25,6 +45,18 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 45,
+						"collisionPoly": {
+							"points": [
+								0.46180555555555547,
+								0.45833333333333326,
+								0.5902777777777773,
+								0.4270833333333333,
+								0.5520833333333335,
+								0.6631944444444446,
+								0.47569444444444414,
+								0.6423611111111114
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}

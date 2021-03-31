@@ -2,6 +2,10 @@
 	"name": "MainCode",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "joystick"
+		},
+		{
 			"eventType": "comment",
 			"text": "Made by Viridino Studios (@ViridinoStudios)\n\nMateus Ferreira - Programmer\nTwitter: @BonzerKitten\nE-mail: ferreiramoreiramateus@gmail.com\n\nWesley Andrade - Artist\nTwitter: @andrart7\nE-mail: wesleymatos1989@gmail.com\n\nMade with the support of patrons on https://www.patreon.com/viridinostudios"
 		},

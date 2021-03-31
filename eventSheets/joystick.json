@@ -1,0 +1,616 @@
+{
+	"name": "joystick",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Functions",
+			"description": "These are canvas scaling functions for use of convience. The tutorial has numerous calls and use for canvas scale and it's just easier. Your projects may not need this as a function and can embed the code.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "ScaleX",
+					"functionDescription": "Automatically converted from 'ScaleX'",
+					"functionCategory": "",
+					"functionReturnType": "any",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Parameter0",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "Automatically converted from 'ScaleX' parameter 0",
+							"sid": 765087439398709
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 488935394040449,
+							"parameters": {
+								"value": "CanvasToLayerX(\"HUD\", touch.AbsoluteXForID(Parameter0), touch.AbsoluteYForID(Parameter0))"
+							}
+						}
+					],
+					"sid": 952669371829838
+				},
+				{
+					"functionName": "ScaleY",
+					"functionDescription": "Automatically converted from 'ScaleY'",
+					"functionCategory": "",
+					"functionReturnType": "any",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Parameter0",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "Automatically converted from 'ScaleY' parameter 0",
+							"sid": 474137241888450
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 288934722058876,
+							"parameters": {
+								"value": "CanvasToLayerY(\"HUD\", touch.AbsoluteXForID(Parameter0), touch.AbsoluteYForID(Parameter0))"
+							}
+						}
+					],
+					"sid": 916231040769026
+				}
+			],
+			"sid": 605476226796089
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "TrackTouch",
+			"description": "Numerica tracker that follows the fingers and report X and Y position.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 317951606583099
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 880099255433870,
+							"parameters": {
+								"object-to-create": "touchTrack",
+								"layer": "1",
+								"x": "touch.X",
+								"y": "touch.Y",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "touchTrack",
+							"sid": 685488527410126,
+							"parameters": {
+								"instance-variable": "id",
+								"value": "touch.touchID"
+							}
+						}
+					],
+					"sid": 890366726666980
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 265462510918280
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "touchTrack",
+							"sid": 490775591936771,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "touch.TouchID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "touchTrack",
+							"sid": 852538924158527
+						}
+					],
+					"sid": 835353755121893
+				},
+				{
+					"eventType": "variable",
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 589417964631125
+				},
+				{
+					"eventType": "variable",
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 205219178968508
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 719626755112183,
+							"parameters": {
+								"object": "touchTrack"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 745447183526767,
+							"parameters": {
+								"variable": "x",
+								"value": "CanvasToLayerX(\"HUD\", touch.AbsoluteXForID(touchTrack.id), touch.AbsoluteYForID(touchTrack.id) )"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 662114065479209,
+							"parameters": {
+								"variable": "y",
+								"value": "CanvasToLayerY(\"HUD\", touch.AbsoluteXForID(touchTrack.id), touch.AbsoluteYForID(touchTrack.id) )"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "touchTrack",
+							"sid": 352114763821065,
+							"parameters": {
+								"x": "x",
+								"y": "y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "touchTrack",
+							"sid": 339551815277412,
+							"parameters": {
+								"text": "\"X:\"& floor(x ) & \" Y:\"& floor(y)"
+							}
+						}
+					],
+					"sid": 656203912710622
+				}
+			],
+			"sid": 562614869635382
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Floating Analog Joystick(fana)",
+			"description": "Controls for a floating(center on touch) based joystick. The method for hiding the control is arbitrary and you can do any way you want.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "touchID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 313266994005195
+				},
+				{
+					"eventType": "variable",
+					"name": "dist",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 909073359267740
+				},
+				{
+					"eventType": "variable",
+					"name": "cangle",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 748819329540576
+				},
+				{
+					"eventType": "variable",
+					"name": "radius",
+					"type": "number",
+					"initialValue": "100",
+					"comment": "distance the stick can move from center",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 719162670835802
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 168747282296307,
+							"parameters": {
+								"object": "fanaRangeBox"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 977394452175004,
+							"parameters": {
+								"variable": "touchID",
+								"value": "touch.TouchID"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "fanaPad",
+							"sid": 595477472239986,
+							"parameters": {
+								"x": "Functions.ScaleX(touchID)",
+								"y": "Functions.ScaleY(touchID)"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "fanaStick",
+							"sid": 944332346404541,
+							"parameters": {
+								"object": "fanaPad",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 550593335134458
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-in-touch",
+							"objectClass": "Touch",
+							"sid": 104763707310338
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 335944797292488,
+							"parameters": {
+								"variable": "touchID",
+								"comparison": 5,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 412306640487237,
+							"parameters": {
+								"variable": "dist",
+								"value": "distance(fanaPad.X, fanaPad.Y, Functions.ScaleX(touchID), Functions.ScaleY(touchID))"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 304188223296566,
+							"parameters": {
+								"variable": "cangle",
+								"value": "angle(fanaPad.X, fanaPad.Y, Functions.ScaleX(touchID), Functions.ScaleY(touchID))"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "fanaStick",
+							"sid": 497967720392639,
+							"parameters": {
+								"x": "(cos(cangle) * (dist < radius ? dist :  radius)) + fanaPad.X",
+								"y": "(sin(cangle) * (dist < radius ? dist :  radius)) + fanaPad.Y"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 945614068166789,
+							"parameters": {
+								"instance-variable": "conAngle",
+								"value": "cangle"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 848496506990412,
+							"parameters": {
+								"instance-variable": "XP",
+								"value": "((fanaStick.X - fanaPad.X)  / radius) * 100"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 711027066570764,
+							"parameters": {
+								"instance-variable": "YP",
+								"value": "((fanaStick.Y - fanaPad.Y)  / radius) * 100"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "fanaTXT",
+							"sid": 716399432950612,
+							"parameters": {
+								"text": "\"angle: \" & floor(cangle) &  \"     XP: \" & floor(fanaStick.XP) & \"     YP: \" & floor(fanaStick.YP)"
+							}
+						}
+					],
+					"sid": 610389336174453
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 982123709254102
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 862619922587409,
+							"parameters": {
+								"variable": "touchID",
+								"comparison": 0,
+								"value": "touch.TouchID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "fanaPad",
+							"sid": 900366320650376,
+							"parameters": {
+								"x": "-1000",
+								"y": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "fanaStick",
+							"sid": 725446970002822,
+							"parameters": {
+								"object": "fanaPad",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 938283764358899,
+							"parameters": {
+								"instance-variable": "XP",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 460562709359791,
+							"parameters": {
+								"instance-variable": "YP",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 566121810222381,
+							"parameters": {
+								"instance-variable": "conAngle",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 465798315581663,
+							"parameters": {
+								"variable": "touchID",
+								"value": "-1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "fanaTXT",
+							"sid": 487802440841877,
+							"parameters": {
+								"text": "\"fana\""
+							}
+						}
+					],
+					"sid": 747439736148405
+				}
+			],
+			"sid": 777627843952072
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Sample",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "demo uses a simple dead zone."
+				},
+				{
+					"eventType": "variable",
+					"name": "deadzone",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 470358681024960
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "fanaStick",
+							"sid": 455022492572175,
+							"parameters": {
+								"instance-variable": "XP",
+								"comparison": 4,
+								"value": "deadzone"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "PlayerCollision",
+							"sid": 471903585800227,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 931077289356151,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "fanaStick",
+							"sid": 754706516470073,
+							"parameters": {
+								"instance-variable": "XP",
+								"comparison": 2,
+								"value": "-deadzone"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "PlayerCollision",
+							"sid": 370427523746716,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 669201827391442,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "fanaStick",
+							"sid": 999122342208989,
+							"parameters": {
+								"instance-variable": "YP",
+								"comparison": 4,
+								"value": "deadzone"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "PlayerCollision",
+							"sid": 446873516795689,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 618168279077501,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "fanaStick",
+							"sid": 126617126454663,
+							"parameters": {
+								"instance-variable": "YP",
+								"comparison": 2,
+								"value": "-deadzone"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "PlayerCollision",
+							"sid": 276580810018535,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "up"
+							}
+						}
+					],
+					"sid": 309049387440156,
+					"isOrBlock": true
+				}
+			],
+			"sid": 311779217885121
+		}
+	],
+	"sid": 550679845894853
+}

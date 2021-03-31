@@ -1,0 +1,53 @@
+{
+	"name": "Sprite",
+	"plugin-id": "Sprite",
+	"sid": 633345644168815,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 425046980128778
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 979913879560066
+		},
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 239358392206740
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 20,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8396699,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 427226910509757,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

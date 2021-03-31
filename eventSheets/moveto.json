@@ -1,0 +1,30 @@
+{
+	"name": "Moveto",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-start",
+					"objectClass": "Touch",
+					"sid": 995195657175539
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-position",
+					"objectClass": "PlayerCollision",
+					"sid": 630227584628422,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "Touch.X",
+						"y": "Touch.Y",
+						"mode": "direct"
+					}
+				}
+			],
+			"sid": 788772664129863
+		}
+	],
+	"sid": 511559056814045
+}
