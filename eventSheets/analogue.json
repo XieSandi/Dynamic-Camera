@@ -1,5 +1,5 @@
 {
-	"name": "fana",
+	"name": "analogue",
 	"events": [
 		{
 			"eventType": "group",
@@ -71,7 +71,7 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
+			"disabled": true,
 			"title": "TrackTouch",
 			"description": "Numerica tracker that follows the fingers and report X and Y position.",
 			"isActiveOnStart": true,
@@ -108,7 +108,8 @@
 							}
 						}
 					],
-					"sid": 890366726666980
+					"sid": 890366726666980,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -136,7 +137,8 @@
 							"sid": 852538924158527
 						}
 					],
-					"sid": 835353755121893
+					"sid": 835353755121893,
+					"disabled": true
 				},
 				{
 					"eventType": "variable",
@@ -207,14 +209,15 @@
 							}
 						}
 					],
-					"sid": 656203912710622
+					"sid": 656203912710622,
+					"disabled": true
 				}
 			],
 			"sid": 562614869635382
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
+			"disabled": true,
 			"title": "Floating Analog Joystick(fana)",
 			"description": "Controls for a floating(center on touch) based joystick. The method for hiding the control is arbitrary and you can do any way you want.",
 			"isActiveOnStart": true,
@@ -300,7 +303,8 @@
 							}
 						}
 					],
-					"sid": 550593335134458
+					"sid": 550593335134458,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -385,7 +389,8 @@
 							}
 						}
 					],
-					"sid": 610389336174453
+					"sid": 610389336174453,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -470,7 +475,8 @@
 							}
 						}
 					],
-					"sid": 747439736148405
+					"sid": 747439736148405,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -558,7 +564,8 @@
 							}
 						}
 					],
-					"sid": 745873841646495
+					"sid": 745873841646495,
+					"disabled": true
 				}
 			],
 			"sid": 777627843952072
@@ -614,22 +621,13 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 412181803404607,
+							"sid": 874053456358313,
 							"parameters": {
 								"object-to-create": "fangStick",
 								"layer": "\"HUD\"",
-								"x": "0",
-								"y": "0",
+								"x": "Functions.ScaleX(touchID)",
+								"y": "Functions.ScaleY(touchID)",
 								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "fangStick",
-							"sid": 774365298228782,
-							"parameters": {
-								"object": "fangPad",
-								"image-point-optional": "0"
 							}
 						}
 					],
@@ -969,19 +967,19 @@
 						{
 							"id": "set-vector-x",
 							"objectClass": "PlayerCollision",
-							"sid": 134701280765729,
+							"sid": 679864860046867,
 							"behaviorType": "8Direction",
 							"parameters": {
-								"vector-x": "cos( fangStick.conAngle ) * 100"
+								"vector-x": "cos( fangStick.conAngle ) * 150"
 							}
 						},
 						{
 							"id": "set-vector-y",
 							"objectClass": "PlayerCollision",
-							"sid": 534079752988870,
+							"sid": 328568391887422,
 							"behaviorType": "8Direction",
 							"parameters": {
-								"vector-y": "sin( fangStick.conAngle ) * 100"
+								"vector-y": "sin( fangStick.conAngle ) * 150"
 							}
 						}
 					],

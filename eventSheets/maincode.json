@@ -3,11 +3,7 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "fana"
-		},
-		{
-			"eventType": "include",
-			"includeSheet": "fang"
+			"includeSheet": "analogue"
 		},
 		{
 			"eventType": "include",

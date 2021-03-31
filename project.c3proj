@@ -229,10 +229,7 @@
 			"player",
 			"fangPad",
 			"fangStick",
-			"fangTXT",
-			"sangTXT",
-			"sangStick",
-			"sangPad"
+			"fangTXT"
 		],
 		"subfolders": []
 	},
@@ -262,8 +259,7 @@
 			"MainCode",
 			"Pathfinding",
 			"Moveto",
-			"fana",
-			"fang"
+			"analogue"
 		],
 		"subfolders": []
 	},
@@ -373,7 +369,7 @@
 		"pixelRounding": true,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-integer-scale",
-		"fullscreenQuality": "high",
+		"fullscreenQuality": "low",
 		"viewportFit": "auto",
 		"backgroundColor": [
 			0,
