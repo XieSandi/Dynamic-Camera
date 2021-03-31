@@ -217,7 +217,7 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": true,
+			"disabled": false,
 			"title": "Floating Analog Joystick(fana)",
 			"description": "Controls for a floating(center on touch) based joystick. The method for hiding the control is arbitrary and you can do any way you want.",
 			"isActiveOnStart": true,
@@ -285,26 +285,46 @@
 							}
 						},
 						{
-							"id": "set-position",
-							"objectClass": "fanaPad",
-							"sid": 595477472239986,
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 499262523931034,
 							"parameters": {
-								"x": "Functions.ScaleX(touchID)",
-								"y": "Functions.ScaleY(touchID)"
+								"object-to-create": "fanaPad",
+								"layer": "\"HUD\"",
+								"x": "PlayerCollision.x",
+								"y": "PlayerCollision.Y",
+								"create-hierarchy": false
 							}
 						},
 						{
-							"id": "set-position-to-another-object",
-							"objectClass": "fanaStick",
-							"sid": 944332346404541,
+							"id": "pin-to-object-properties",
+							"objectClass": "fanaPad",
+							"sid": 902990721006163,
+							"behaviorType": "Pin",
 							"parameters": {
-								"object": "fanaPad",
-								"image-point-optional": "0"
+								"pin-to": "PlayerCollision",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 951313671881418,
+							"parameters": {
+								"object-to-create": "fanaStick",
+								"layer": "\"HUD\"",
+								"x": "PlayerCollision.x",
+								"y": "PlayerCollision.Y",
+								"create-hierarchy": false
 							}
 						}
 					],
-					"sid": 550593335134458,
-					"disabled": true
+					"sid": 550593335134458
 				},
 				{
 					"eventType": "block",
@@ -389,8 +409,7 @@
 							}
 						}
 					],
-					"sid": 610389336174453,
-					"disabled": true
+					"sid": 610389336174453
 				},
 				{
 					"eventType": "block",
@@ -413,22 +432,14 @@
 					],
 					"actions": [
 						{
-							"id": "set-position",
+							"id": "destroy",
 							"objectClass": "fanaPad",
-							"sid": 900366320650376,
-							"parameters": {
-								"x": "-1000",
-								"y": "0"
-							}
+							"sid": 866658426914345
 						},
 						{
-							"id": "set-position-to-another-object",
+							"id": "destroy",
 							"objectClass": "fanaStick",
-							"sid": 725446970002822,
-							"parameters": {
-								"object": "fanaPad",
-								"image-point-optional": "0"
-							}
+							"sid": 736517986717137
 						},
 						{
 							"id": "set-instvar-value",
@@ -475,8 +486,7 @@
 							}
 						}
 					],
-					"sid": 747439736148405,
-					"disabled": true
+					"sid": 747439736148405
 				},
 				{
 					"eventType": "block",
@@ -501,6 +511,11 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "fanaPad",
+							"sid": 851904183443025
+						},
 						{
 							"id": "set-position",
 							"objectClass": "fanaPad",
@@ -564,15 +579,14 @@
 							}
 						}
 					],
-					"sid": 745873841646495,
-					"disabled": true
+					"sid": 745873841646495
 				}
 			],
 			"sid": 777627843952072
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
+			"disabled": true,
 			"title": "Float Angle Joystick(fang)",
 			"description": "Control for an angle floating(center on touch) based joystick. The method for hiding the controls is arbitraty. Feel free to use any method you want.",
 			"isActiveOnStart": true,
@@ -609,13 +623,28 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 132200170605779,
+							"sid": 812005338390145,
 							"parameters": {
 								"object-to-create": "fangPad",
 								"layer": "\"hud\"",
-								"x": "Functions.ScaleX(touchID)",
-								"y": "Functions.ScaleY(touchID)",
+								"x": "PlayerCollision.x",
+								"y": "PlayerCollision.y",
 								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "fangPad",
+							"sid": 910465007330192,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "PlayerCollision",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
 							}
 						},
 						{
@@ -631,7 +660,8 @@
 							}
 						}
 					],
-					"sid": 708798003222939
+					"sid": 708798003222939,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -681,7 +711,8 @@
 							}
 						}
 					],
-					"sid": 810631491727927
+					"sid": 810631491727927,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -749,7 +780,8 @@
 							}
 						}
 					],
-					"sid": 906246051259083
+					"sid": 906246051259083,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -811,7 +843,8 @@
 							}
 						}
 					],
-					"sid": 137717026577456
+					"sid": 137717026577456,
+					"disabled": true
 				}
 			],
 			"sid": 789935286290525

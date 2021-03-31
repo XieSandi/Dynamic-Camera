@@ -4,21 +4,27 @@
 	"sid": 809272832853988,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 194578216746973
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 64,
-						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 28,
+						"height": 28,
+						"originX": 0.5357142857142857,
+						"originY": 0.5714285714285714,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6476299,
+						"imageSpriteId": 2164693,
 						"useCollisionPoly": true,
 						"duration": 1
 					}

@@ -33,7 +33,7 @@
 						}
 					},
 					"world": {
-						"x": 0,
+						"x": 288,
 						"y": 288,
 						"width": 512,
 						"height": 288,
@@ -45,7 +45,7 @@
 							1,
 							1
 						],
-						"angle": 0,
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				},
@@ -248,8 +248,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": -256,
-						"y": 160,
+						"x": 96,
+						"y": 192,
 						"width": 32,
 						"height": 32,
 						"originX": 0,
@@ -404,7 +404,13 @@
 					},
 					"uid": 23,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
 					"world": {
 						"x": 192,
 						"y": 96,
@@ -595,14 +601,20 @@
 					},
 					"uid": 26,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
 					"world": {
 						"x": 736,
 						"y": 96,
-						"width": 64,
-						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 28,
+						"height": 28,
+						"originX": 0.5357142857142857,
+						"originY": 0.5714285714285714,
 						"color": [
 							1,
 							1,
@@ -637,10 +649,10 @@
 					"world": {
 						"x": 768,
 						"y": 96,
-						"width": 64,
-						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 28,
+						"height": 28,
+						"originX": 0.4642857142857143,
+						"originY": 0.4642857142857143,
 						"color": [
 							1,
 							1,

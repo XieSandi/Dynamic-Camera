@@ -168,6 +168,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "DragnDrop",
 			"name": "Drag & Drop",
 			"author": "Scirra",
@@ -234,15 +242,7 @@
 		"subfolders": []
 	},
 	"autosaveData": null,
-	"containers": [
-		{
-			"members": [
-				"PlayerCollision",
-				"PlayerGraphics"
-			],
-			"selectMode": "normal"
-		}
-	],
+	"containers": [],
 	"families": {
 		"items": [],
 		"subfolders": []
@@ -368,7 +368,7 @@
 		"appId": "com.com.com",
 		"pixelRounding": true,
 		"useLoaderLayout": false,
-		"fullscreenMode": "letterbox-integer-scale",
+		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "low",
 		"viewportFit": "auto",
 		"backgroundColor": [

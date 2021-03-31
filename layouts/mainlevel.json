@@ -231,7 +231,7 @@
 				{
 					"type": "PlayerCollision",
 					"properties": {
-						"initially-visible": false,
+						"initially-visible": true,
 						"initial-animation": "Default",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -272,7 +272,7 @@
 						},
 						"MoveTo": {
 							"properties": {
-								"max-speed": 500,
+								"max-speed": 150,
 								"acceleration": 600,
 								"deceleration": 600,
 								"rotate-speed": 360,
@@ -283,7 +283,7 @@
 						},
 						"8Direction": {
 							"properties": {
-								"max-speed": 500,
+								"max-speed": 150,
 								"acceleration": 600,
 								"deceleration": 500,
 								"directions": "dir-8",
@@ -529,8 +529,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 304,
-						"y": -288,
+						"x": 144,
+						"y": 256,
 						"width": 288,
 						"height": 512,
 						"originX": 0.5,
@@ -601,72 +601,7 @@
 		{
 			"name": "HUD",
 			"overriden": 0,
-			"instances": [
-				{
-					"type": "fanaPad",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Default",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 29,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 64,
-						"y": -64,
-						"width": 32,
-						"height": 32,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "fanaStick",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Default",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 30,
-					"instanceVariables": {
-						"radius": 0,
-						"XP": 0,
-						"YP": 0,
-						"dist": 0,
-						"conAngle": 0
-					},
-					"behaviors": {},
-					"world": {
-						"x": 96,
-						"y": -64,
-						"width": 64,
-						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							0.5
-						],
-						"angle": 0.004057687378478558,
-						"zElevation": 0
-					}
-				}
-			],
+			"instances": [],
 			"sid": 260012936690591,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
