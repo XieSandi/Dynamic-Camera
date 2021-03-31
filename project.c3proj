@@ -167,6 +167,14 @@
 			"bundled": false
 		},
 		{
+			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
 			"type": "effect",
 			"id": "brightness",
 			"name": "Brightness",
@@ -218,7 +226,13 @@
 			"touchTrack",
 			"fanaRangeBox",
 			"fanaTXT",
-			"player"
+			"player",
+			"fangPad",
+			"fangStick",
+			"fangTXT",
+			"sangTXT",
+			"sangStick",
+			"sangPad"
 		],
 		"subfolders": []
 	},
@@ -248,7 +262,8 @@
 			"MainCode",
 			"Pathfinding",
 			"Moveto",
-			"joystick"
+			"fana",
+			"fang"
 		],
 		"subfolders": []
 	},

@@ -1,5 +1,5 @@
 {
-	"name": "joystick",
+	"name": "fana",
 	"events": [
 		{
 			"eventType": "group",
@@ -471,9 +471,352 @@
 						}
 					],
 					"sid": 747439736148405
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "PlayerCollision",
+							"sid": 578350268756583,
+							"parameters": {
+								"object": "CameraZone"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 762350024571556,
+							"parameters": {
+								"variable": "touchID",
+								"comparison": 0,
+								"value": "touch.TouchID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "fanaPad",
+							"sid": 331233066609604,
+							"parameters": {
+								"x": "-1000",
+								"y": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "fanaStick",
+							"sid": 170954913234286,
+							"parameters": {
+								"object": "fanaPad",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 668600930385459,
+							"parameters": {
+								"instance-variable": "XP",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 680881445999461,
+							"parameters": {
+								"instance-variable": "YP",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 843693481504687,
+							"parameters": {
+								"instance-variable": "conAngle",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 841333603065940,
+							"parameters": {
+								"variable": "touchID",
+								"value": "-1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "fanaTXT",
+							"sid": 457428549749544,
+							"parameters": {
+								"text": "\"fana\""
+							}
+						}
+					],
+					"sid": 745873841646495
 				}
 			],
 			"sid": 777627843952072
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Float Angle Joystick(fang)",
+			"description": "Control for an angle floating(center on touch) based joystick. The method for hiding the controls is arbitraty. Feel free to use any method you want.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "touchID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 607858989157623
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 296760496152105
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 796323639642348,
+							"parameters": {
+								"variable": "touchID",
+								"value": "touch.TouchID"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 132200170605779,
+							"parameters": {
+								"object-to-create": "fangPad",
+								"layer": "\"hud\"",
+								"x": "Functions.ScaleX(touchID)",
+								"y": "Functions.ScaleY(touchID)",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 412181803404607,
+							"parameters": {
+								"object-to-create": "fangStick",
+								"layer": "\"HUD\"",
+								"x": "0",
+								"y": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "fangStick",
+							"sid": 774365298228782,
+							"parameters": {
+								"object": "fangPad",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 708798003222939
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-in-touch",
+							"objectClass": "Touch",
+							"sid": 345670011226259,
+							"disabled": true
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 737482416962309,
+							"parameters": {
+								"variable": "touchID",
+								"comparison": 5,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "fangStick",
+							"sid": 421050470135021,
+							"parameters": {
+								"x": "Functions.ScaleX(touchID)",
+								"y": "Functions.ScaleY(touchID)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fangStick",
+							"sid": 754465258221937,
+							"parameters": {
+								"instance-variable": "conAngle",
+								"value": "angle(fangPad.X, fangPad.Y, self.X, self.Y)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "fangTXT",
+							"sid": 608137736242316,
+							"parameters": {
+								"text": "\"angle: \" & fangStick.conAngle"
+							}
+						}
+					],
+					"sid": 810631491727927
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 925881292020782
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 279919368017716,
+							"parameters": {
+								"variable": "touchID",
+								"comparison": 0,
+								"value": "touch.TouchID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "fangPad",
+							"sid": 222136138653347
+						},
+						{
+							"id": "destroy",
+							"objectClass": "fangStick",
+							"sid": 258266323845469
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fangStick",
+							"sid": 641845890950304,
+							"parameters": {
+								"instance-variable": "conAngle",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 807526782811536,
+							"parameters": {
+								"variable": "touchID",
+								"value": "-1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "fangTXT",
+							"sid": 523511486467654,
+							"parameters": {
+								"text": "\"fang\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fangStick",
+							"sid": 740979160126113,
+							"parameters": {
+								"instance-variable": "conAngle",
+								"value": "int( \"\" )"
+							}
+						}
+					],
+					"sid": 906246051259083
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "PlayerCollision",
+							"sid": 134979449379608,
+							"parameters": {
+								"object": "CameraZone"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 707400706745715,
+							"parameters": {
+								"variable": "touchID",
+								"comparison": 0,
+								"value": "touch.TouchID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "fangPad",
+							"sid": 519175498437600
+						},
+						{
+							"id": "destroy",
+							"objectClass": "fangStick",
+							"sid": 507054236604684
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fangStick",
+							"sid": 868942435348291,
+							"parameters": {
+								"instance-variable": "conAngle",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 390314540007131,
+							"parameters": {
+								"variable": "touchID",
+								"value": "-1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "fangTXT",
+							"sid": 150643380744928,
+							"parameters": {
+								"text": "\"fang\""
+							}
+						}
+					],
+					"sid": 137717026577456
+				}
+			],
+			"sid": 789935286290525
 		},
 		{
 			"eventType": "group",
@@ -607,6 +950,42 @@
 					],
 					"sid": 309049387440156,
 					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "fangStick",
+							"sid": 172293710981579,
+							"parameters": {
+								"instance-variable": "conAngle",
+								"comparison": 1,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-vector-x",
+							"objectClass": "PlayerCollision",
+							"sid": 134701280765729,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"vector-x": "cos( fangStick.conAngle ) * 100"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "PlayerCollision",
+							"sid": 534079752988870,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"vector-y": "sin( fangStick.conAngle ) * 100"
+							}
+						}
+					],
+					"sid": 278110887474781
 				}
 			],
 			"sid": 311779217885121

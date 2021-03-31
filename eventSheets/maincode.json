@@ -3,7 +3,19 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "joystick"
+			"includeSheet": "fana"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "fang"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Moveto"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Pathfinding"
 		},
 		{
 			"eventType": "comment",

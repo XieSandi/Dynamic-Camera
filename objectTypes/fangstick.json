@@ -1,0 +1,50 @@
+{
+	"name": "fangStick",
+	"plugin-id": "Sprite",
+	"sid": 500584122690608,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "conAngle",
+			"type": "number",
+			"desc": "",
+			"sid": 409753333291143
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "DragnDrop",
+			"name": "DragDrop",
+			"sid": 658162033431728
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7188133,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 136556928933125,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
