@@ -358,7 +358,7 @@
 		"pixelRounding": true,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-integer-scale",
-		"fullscreenQuality": "low",
+		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
 			0,
@@ -380,7 +380,7 @@
 			0
 		],
 		"useHighDpi": true,
-		"orientations": "landscape",
+		"orientations": "portrait",
 		"enableWebGL": true,
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
