@@ -231,7 +231,7 @@
 				{
 					"type": "PlayerCollision",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Default",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -603,6 +603,34 @@
 			"overriden": 0,
 			"instances": [],
 			"sid": 260012936690591,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "ADS",
+			"overriden": 0,
+			"instances": [],
+			"sid": 324517352860910,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"color": [

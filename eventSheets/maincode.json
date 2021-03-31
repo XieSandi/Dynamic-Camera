@@ -2,6 +2,36 @@
 	"name": "MainCode",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "Banner",
+			"type": "string",
+			"initialValue": "ca-app-pub-3940256099942544/6300978111",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 385281970381750
+		},
+		{
+			"eventType": "variable",
+			"name": "Interestial",
+			"type": "string",
+			"initialValue": "ca-app-pub-3940256099942544/1033173712",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 671124603609764
+		},
+		{
+			"eventType": "variable",
+			"name": "VideoRewards",
+			"type": "string",
+			"initialValue": "ca-app-pub-3940256099942544/5224354917",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 205256428517932
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "analogue"
 		},
@@ -20,6 +50,40 @@
 		{
 			"eventType": "comment",
 			"text": "Setup the player by adding its graphics to the collider as a child."
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ADS",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 636418359638162
+						}
+					],
+					"actions": [
+						{
+							"id": "create-banner",
+							"objectClass": "MobileAdvert",
+							"sid": 680398268966868,
+							"parameters": {
+								"advert-id": "Banner",
+								"banner-size": "portrait",
+								"show": "true",
+								"position": "top"
+							}
+						}
+					],
+					"sid": 580223051559276
+				}
+			],
+			"sid": 995949277311818
 		},
 		{
 			"eventType": "block",
@@ -597,6 +661,15 @@
 						"x": "0",
 						"y": "0",
 						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "create-interstitial",
+					"objectClass": "MobileAdvert",
+					"sid": 204467012652365,
+					"parameters": {
+						"advert-id": "Interestial",
+						"show": "true"
 					}
 				},
 				{
