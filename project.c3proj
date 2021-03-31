@@ -349,12 +349,12 @@
 		]
 	},
 	"properties": {
-		"description": "",
+		"description": "asd",
 		"version": "1.0.0.0",
-		"author": "",
-		"authorEmail": "",
-		"authorWebsite": "",
-		"appId": "",
+		"author": "xiesandi",
+		"authorEmail": "sandi@adeliepenguin.studio",
+		"authorWebsite": "adeliepenguin.studio",
+		"appId": "com.com.com",
 		"pixelRounding": true,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-integer-scale",
