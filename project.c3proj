@@ -263,7 +263,8 @@
 			"MobileAdvert",
 			"fanaPad",
 			"Timeline",
-			"Sprite2"
+			"movetoright",
+			"movetoleft"
 		],
 		"subfolders": []
 	},
@@ -292,8 +293,8 @@
 		"items": [
 			"MainCode",
 			"Pathfinding",
-			"Moveto",
-			"analogue"
+			"analogue",
+			"moveto"
 		],
 		"subfolders": []
 	},
@@ -386,7 +387,9 @@
 	},
 	"timelines": {
 		"items": [
-			"mapmovement"
+			"mapmovement",
+			"move left",
+			"move right"
 		],
 		"subfolders": [
 			{

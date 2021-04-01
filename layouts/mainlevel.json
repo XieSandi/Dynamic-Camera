@@ -385,7 +385,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "movetoleft",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -397,7 +397,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 256,
+						"x": 309.75061632149476,
 						"y": 96,
 						"width": 32,
 						"height": 64,
@@ -414,7 +414,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "movetoright",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -426,7 +426,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 320,
+						"x": 266.7755411656242,
 						"y": 96,
 						"width": 32,
 						"height": 64,

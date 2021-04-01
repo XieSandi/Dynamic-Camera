@@ -1,30 +1,114 @@
 {
-	"name": "Moveto",
+	"name": "moveto",
 	"events": [
+		{
+			"eventType": "variable",
+			"name": "trigger",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 500906268744466
+		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-any-touch-start",
-					"objectClass": "Touch",
-					"sid": 995195657175539
+					"id": "on-collision-with-another-object",
+					"objectClass": "PlayerCollision",
+					"sid": 708874402868726,
+					"parameters": {
+						"object": "movetoright"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 122821201265622,
+					"parameters": {
+						"variable": "trigger",
+						"comparison": 0,
+						"value": "0"
+					}
 				}
 			],
 			"actions": [
 				{
-					"id": "move-to-position",
-					"objectClass": "PlayerCollision",
-					"sid": 630227584628422,
-					"behaviorType": "MoveTo",
+					"id": "play-timeline",
+					"objectClass": "Timeline",
+					"sid": 388481693095544,
 					"parameters": {
-						"x": "Touch.X",
-						"y": "Touch.Y",
-						"mode": "direct"
+						"timeline": "move right",
+						"tags": "\"\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 911040786973007
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 471504682081559,
+					"parameters": {
+						"variable": "trigger",
+						"value": "1"
 					}
 				}
 			],
-			"sid": 788772664129863
+			"sid": 115510899467895
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "PlayerCollision",
+					"sid": 683491460437195,
+					"parameters": {
+						"object": "movetoleft"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 993502345721579,
+					"parameters": {
+						"variable": "trigger",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play-timeline",
+					"objectClass": "Timeline",
+					"sid": 476781184138045,
+					"parameters": {
+						"timeline": "move left",
+						"tags": "\"\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 821386198304959
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 944158538598849,
+					"parameters": {
+						"variable": "trigger",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 161843852909866
 		}
 	],
-	"sid": 511559056814045
+	"sid": 585737471288859
 }

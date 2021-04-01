@@ -36,6 +36,10 @@
 			"includeSheet": "analogue"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "moveto"
+		},
+		{
 			"eventType": "comment",
 			"text": "Setup the player by adding its graphics to the collider as a child."
 		},
@@ -710,21 +714,6 @@
 				}
 			],
 			"sid": 246040431934806
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "PlayerCollision",
-					"sid": 828345113270181,
-					"parameters": {
-						"object": "Sprite2"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 466012099459613
 		}
 	],
 	"sid": 349244344172511
