@@ -217,375 +217,6 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
-			"title": "Floating Analog Joystick(fana)",
-			"description": "Controls for a floating(center on touch) based joystick. The method for hiding the control is arbitrary and you can do any way you want.",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "variable",
-					"name": "touchID",
-					"type": "number",
-					"initialValue": "-1",
-					"comment": "",
-					"isStatic": true,
-					"isConstant": false,
-					"sid": 313266994005195
-				},
-				{
-					"eventType": "variable",
-					"name": "dist",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 909073359267740
-				},
-				{
-					"eventType": "variable",
-					"name": "cangle",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 748819329540576
-				},
-				{
-					"eventType": "variable",
-					"name": "radius",
-					"type": "number",
-					"initialValue": "100",
-					"comment": "distance the stick can move from center",
-					"isStatic": true,
-					"isConstant": false,
-					"sid": 719162670835802
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-touched-object",
-							"objectClass": "Touch",
-							"sid": 168747282296307,
-							"parameters": {
-								"object": "fanaRangeBox"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 977394452175004,
-							"parameters": {
-								"variable": "touchID",
-								"value": "touch.TouchID"
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 499262523931034,
-							"parameters": {
-								"object-to-create": "fanaPad",
-								"layer": "\"HUD\"",
-								"x": "PlayerCollision.x",
-								"y": "PlayerCollision.Y",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "pin-to-object-properties",
-							"objectClass": "fanaPad",
-							"sid": 902990721006163,
-							"behaviorType": "Pin",
-							"parameters": {
-								"pin-to": "PlayerCollision",
-								"x": true,
-								"y": true,
-								"angle": true,
-								"width-type": "no",
-								"height-type": "no",
-								"z": false
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 951313671881418,
-							"parameters": {
-								"object-to-create": "fanaStick",
-								"layer": "\"HUD\"",
-								"x": "PlayerCollision.x",
-								"y": "PlayerCollision.Y",
-								"create-hierarchy": false
-							}
-						}
-					],
-					"sid": 550593335134458
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-in-touch",
-							"objectClass": "Touch",
-							"sid": 104763707310338
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 335944797292488,
-							"parameters": {
-								"variable": "touchID",
-								"comparison": 5,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 412306640487237,
-							"parameters": {
-								"variable": "dist",
-								"value": "distance(fanaPad.X, fanaPad.Y, Functions.ScaleX(touchID), Functions.ScaleY(touchID))"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 304188223296566,
-							"parameters": {
-								"variable": "cangle",
-								"value": "angle(fanaPad.X, fanaPad.Y, Functions.ScaleX(touchID), Functions.ScaleY(touchID))"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "fanaStick",
-							"sid": 497967720392639,
-							"parameters": {
-								"x": "(cos(cangle) * (dist < radius ? dist :  radius)) + fanaPad.X",
-								"y": "(sin(cangle) * (dist < radius ? dist :  radius)) + fanaPad.Y"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "fanaStick",
-							"sid": 945614068166789,
-							"parameters": {
-								"instance-variable": "conAngle",
-								"value": "cangle"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "fanaStick",
-							"sid": 848496506990412,
-							"parameters": {
-								"instance-variable": "XP",
-								"value": "((fanaStick.X - fanaPad.X)  / radius) * 100"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "fanaStick",
-							"sid": 711027066570764,
-							"parameters": {
-								"instance-variable": "YP",
-								"value": "((fanaStick.Y - fanaPad.Y)  / radius) * 100"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "fanaTXT",
-							"sid": 716399432950612,
-							"parameters": {
-								"text": "\"angle: \" & floor(cangle) &  \"     XP: \" & floor(fanaStick.XP) & \"     YP: \" & floor(fanaStick.YP)"
-							}
-						}
-					],
-					"sid": 610389336174453
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-any-touch-end",
-							"objectClass": "Touch",
-							"sid": 982123709254102
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 862619922587409,
-							"parameters": {
-								"variable": "touchID",
-								"comparison": 0,
-								"value": "touch.TouchID"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "fanaPad",
-							"sid": 866658426914345
-						},
-						{
-							"id": "destroy",
-							"objectClass": "fanaStick",
-							"sid": 736517986717137
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "fanaStick",
-							"sid": 938283764358899,
-							"parameters": {
-								"instance-variable": "XP",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "fanaStick",
-							"sid": 460562709359791,
-							"parameters": {
-								"instance-variable": "YP",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "fanaStick",
-							"sid": 566121810222381,
-							"parameters": {
-								"instance-variable": "conAngle",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 465798315581663,
-							"parameters": {
-								"variable": "touchID",
-								"value": "-1"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "fanaTXT",
-							"sid": 487802440841877,
-							"parameters": {
-								"text": "\"fana\""
-							}
-						}
-					],
-					"sid": 747439736148405
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "PlayerCollision",
-							"sid": 578350268756583,
-							"parameters": {
-								"object": "CameraZone"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 762350024571556,
-							"parameters": {
-								"variable": "touchID",
-								"comparison": 0,
-								"value": "touch.TouchID"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "fanaPad",
-							"sid": 851904183443025
-						},
-						{
-							"id": "set-position",
-							"objectClass": "fanaPad",
-							"sid": 331233066609604,
-							"parameters": {
-								"x": "-1000",
-								"y": "0"
-							}
-						},
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "fanaStick",
-							"sid": 170954913234286,
-							"parameters": {
-								"object": "fanaPad",
-								"image-point-optional": "0"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "fanaStick",
-							"sid": 668600930385459,
-							"parameters": {
-								"instance-variable": "XP",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "fanaStick",
-							"sid": 680881445999461,
-							"parameters": {
-								"instance-variable": "YP",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "fanaStick",
-							"sid": 843693481504687,
-							"parameters": {
-								"instance-variable": "conAngle",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 841333603065940,
-							"parameters": {
-								"variable": "touchID",
-								"value": "-1"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "fanaTXT",
-							"sid": 457428549749544,
-							"parameters": {
-								"text": "\"fana\""
-							}
-						}
-					],
-					"sid": 745873841646495
-				}
-			],
-			"sid": 777627843952072
-		},
-		{
-			"eventType": "group",
 			"disabled": true,
 			"title": "Float Angle Joystick(fang)",
 			"description": "Control for an angle floating(center on touch) based joystick. The method for hiding the controls is arbitraty. Feel free to use any method you want.",
@@ -1020,6 +651,269 @@
 				}
 			],
 			"sid": 311779217885121
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Floating Analog Joystick(fana)",
+			"description": "Controls for a floating(center on touch) based joystick. The method for hiding the control is arbitrary and you can do any way you want.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "touchID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 123124707777432
+				},
+				{
+					"eventType": "variable",
+					"name": "dist",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 834534755084940
+				},
+				{
+					"eventType": "variable",
+					"name": "cangle",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 701980250650202
+				},
+				{
+					"eventType": "variable",
+					"name": "radius",
+					"type": "number",
+					"initialValue": "100",
+					"comment": "distance the stick can move from center",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 120106543980388
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 399367876102665,
+							"parameters": {
+								"object": "fanaRangeBox"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 383809588262614,
+							"parameters": {
+								"variable": "touchID",
+								"value": "touch.TouchID"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "fanaPad",
+							"sid": 876454891663529,
+							"parameters": {
+								"x": "Functions.ScaleX(touchID)",
+								"y": "Functions.ScaleY(touchID)"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "fanaStick",
+							"sid": 579422775442988,
+							"parameters": {
+								"object": "fanaPad",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 170791019959281
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-in-touch",
+							"objectClass": "Touch",
+							"sid": 932347831704763
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 896949833742671,
+							"parameters": {
+								"variable": "touchID",
+								"comparison": 5,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 543238403949948,
+							"parameters": {
+								"variable": "dist",
+								"value": "distance(fanaPad.X, fanaPad.Y, Functions.ScaleX(touchID), Functions.ScaleY(touchID))"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 394291235761235,
+							"parameters": {
+								"variable": "cangle",
+								"value": "angle(fanaPad.X, fanaPad.Y, Functions.ScaleX(touchID), Functions.ScaleY(touchID))"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "fanaStick",
+							"sid": 725192883392021,
+							"parameters": {
+								"x": "(cos(cangle) * (dist < radius ? dist :  radius)) + fanaPad.X",
+								"y": "(sin(cangle) * (dist < radius ? dist :  radius)) + fanaPad.Y"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 601119436495991,
+							"parameters": {
+								"instance-variable": "conAngle",
+								"value": "cangle"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 742835292489855,
+							"parameters": {
+								"instance-variable": "XP",
+								"value": "((fanaStick.X - fanaPad.X)  / radius) * 100"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 310421337675274,
+							"parameters": {
+								"instance-variable": "YP",
+								"value": "((fanaStick.Y - fanaPad.Y)  / radius) * 100"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "fanaTXT",
+							"sid": 204240294715729,
+							"parameters": {
+								"text": "\"angle: \" & floor(cangle) &  \"     XP: \" & floor(fanaStick.XP) & \"     YP: \" & floor(fanaStick.YP)"
+							}
+						}
+					],
+					"sid": 593153565774724
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 601460303626418
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 871043500587504,
+							"parameters": {
+								"variable": "touchID",
+								"comparison": 0,
+								"value": "touch.TouchID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "fanaPad",
+							"sid": 478309283936298,
+							"parameters": {
+								"x": "-1000",
+								"y": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "fanaStick",
+							"sid": 256664450942157,
+							"parameters": {
+								"object": "fanaPad",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 750706721518169,
+							"parameters": {
+								"instance-variable": "XP",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 696072707228870,
+							"parameters": {
+								"instance-variable": "YP",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fanaStick",
+							"sid": 843762772164544,
+							"parameters": {
+								"instance-variable": "conAngle",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 539429109420859,
+							"parameters": {
+								"variable": "touchID",
+								"value": "-1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "fanaTXT",
+							"sid": 235806556101129,
+							"parameters": {
+								"text": "\"fana\""
+							}
+						}
+					],
+					"sid": 288972171796182
+				}
+			],
+			"sid": 351686995031280
 		}
 	],
 	"sid": 550679845894853

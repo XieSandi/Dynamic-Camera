@@ -486,6 +486,70 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "fanaPad",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 23,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -159,
+						"y": 114,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "fanaStick",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 29,
+					"instanceVariables": {
+						"radius": 0,
+						"XP": 0,
+						"YP": 0,
+						"dist": 0,
+						"conAngle": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": -127,
+						"y": 115,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.5
+						],
+						"angle": 0.004057687378478558,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 720130322810082,

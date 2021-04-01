@@ -237,7 +237,6 @@
 			"CellMarker",
 			"Touch",
 			"Sprite",
-			"fanaPad",
 			"fanaStick",
 			"touchTrack",
 			"fanaRangeBox",
@@ -246,7 +245,8 @@
 			"fangPad",
 			"fangStick",
 			"fangTXT",
-			"MobileAdvert"
+			"MobileAdvert",
+			"fanaPad"
 		],
 		"subfolders": []
 	},
