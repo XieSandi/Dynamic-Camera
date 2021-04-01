@@ -20,16 +20,6 @@
 						"first-angle": "-45",
 						"second-angle": "45"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 760982145217565,
-					"parameters": {
-						"variable": "possible",
-						"comparison": 0,
-						"value": "1"
-					}
 				}
 			],
 			"actions": [
@@ -48,15 +38,6 @@
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 356582620839317
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 373974905271230,
-					"parameters": {
-						"variable": "possible",
-						"value": "1"
-					}
 				}
 			],
 			"sid": 929014698623995
@@ -80,16 +61,6 @@
 						"first-angle": "135",
 						"second-angle": "-135"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 893421755263393,
-					"parameters": {
-						"variable": "possible",
-						"comparison": 0,
-						"value": "1"
-					}
 				}
 			],
 			"actions": [
@@ -108,15 +79,6 @@
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 962879361131359
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 769806454076505,
-					"parameters": {
-						"variable": "possible",
-						"value": "1"
-					}
 				}
 			],
 			"sid": 905461073726311
@@ -140,16 +102,6 @@
 						"first-angle": "45",
 						"second-angle": "135"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 336703385095949,
-					"parameters": {
-						"variable": "possible",
-						"comparison": 0,
-						"value": "1"
-					}
 				}
 			],
 			"actions": [
@@ -168,15 +120,6 @@
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 656613027669117
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 331251609652871,
-					"parameters": {
-						"variable": "possible",
-						"value": "1"
-					}
 				}
 			],
 			"sid": 150540122698656
@@ -200,16 +143,6 @@
 						"first-angle": "-135",
 						"second-angle": "-45"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 378997552304552,
-					"parameters": {
-						"variable": "possible",
-						"comparison": 0,
-						"value": "1"
-					}
 				}
 			],
 			"actions": [
@@ -228,15 +161,6 @@
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 194248292631432
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 142866458339872,
-					"parameters": {
-						"variable": "possible",
-						"value": "1"
-					}
 				}
 			],
 			"sid": 588509376889055

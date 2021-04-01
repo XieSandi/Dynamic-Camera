@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "possible",
 			"type": "number",
-			"initialValue": "1",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -246,16 +246,6 @@
 							"id": "on-any-touch-start",
 							"objectClass": "Touch",
 							"sid": 296760496152105
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 553865362191821,
-							"parameters": {
-								"variable": "possible",
-								"comparison": 0,
-								"value": "1"
-							}
 						}
 					],
 					"actions": [
