@@ -1,41 +1,30 @@
 {
-	"name": "player",
+	"name": "maptrigger",
 	"plugin-id": "Sprite",
-	"sid": 281257908217764,
+	"sid": 394522792232619,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "EightDir",
-			"name": "8Direction",
-			"sid": 890876403894693
-		},
-		{
-			"behaviorId": "MoveTo",
-			"name": "MoveTo",
-			"sid": 888733851708428
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 64,
-						"height": 64,
+						"width": 250,
+						"height": 250,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 286175,
+						"imageSpriteId": 4300959,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 402162671636817,
-				"name": "Default",
+				"sid": 677440777966127,
+				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

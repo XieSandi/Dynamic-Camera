@@ -37,7 +37,7 @@
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "moveto"
+			"includeSheet": "maptrigger"
 		},
 		{
 			"eventType": "comment",

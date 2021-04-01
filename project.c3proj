@@ -160,14 +160,6 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Platform",
-			"name": "Platform",
-			"author": "Scirra",
-			"version": "r241",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
 			"id": "Fade",
 			"name": "Fade",
 			"author": "Scirra",
@@ -264,20 +256,13 @@
 			"fanaPad",
 			"Timeline",
 			"movetoright",
-			"movetoleft"
+			"movetoleft",
+			"maptrigger"
 		],
 		"subfolders": []
 	},
 	"autosaveData": null,
-	"containers": [
-		{
-			"members": [
-				"PlayerCollision",
-				"PlayerGraphics"
-			],
-			"selectMode": "normal"
-		}
-	],
+	"containers": [],
 	"families": {
 		"items": [],
 		"subfolders": []
@@ -294,7 +279,8 @@
 			"MainCode",
 			"Pathfinding",
 			"analogue",
-			"moveto"
+			"moveto",
+			"maptrigger"
 		],
 		"subfolders": []
 	},
