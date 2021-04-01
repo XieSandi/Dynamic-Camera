@@ -2,6 +2,16 @@
 	"name": "analogue",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "possible",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 842378792579987
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Functions",
@@ -71,7 +81,7 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": true,
+			"disabled": false,
 			"title": "TrackTouch",
 			"description": "Numerica tracker that follows the fingers and report X and Y position.",
 			"isActiveOnStart": true,
@@ -108,8 +118,7 @@
 							}
 						}
 					],
-					"sid": 890366726666980,
-					"disabled": true
+					"sid": 890366726666980
 				},
 				{
 					"eventType": "block",
@@ -137,8 +146,7 @@
 							"sid": 852538924158527
 						}
 					],
-					"sid": 835353755121893,
-					"disabled": true
+					"sid": 835353755121893
 				},
 				{
 					"eventType": "variable",
@@ -209,15 +217,14 @@
 							}
 						}
 					],
-					"sid": 656203912710622,
-					"disabled": true
+					"sid": 656203912710622
 				}
 			],
 			"sid": 562614869635382
 		},
 		{
 			"eventType": "group",
-			"disabled": true,
+			"disabled": false,
 			"title": "Float Angle Joystick(fang)",
 			"description": "Control for an angle floating(center on touch) based joystick. The method for hiding the controls is arbitraty. Feel free to use any method you want.",
 			"isActiveOnStart": true,
@@ -239,6 +246,16 @@
 							"id": "on-any-touch-start",
 							"objectClass": "Touch",
 							"sid": 296760496152105
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 553865362191821,
+							"parameters": {
+								"variable": "possible",
+								"comparison": 0,
+								"value": "1"
+							}
 						}
 					],
 					"actions": [
@@ -291,8 +308,7 @@
 							}
 						}
 					],
-					"sid": 708798003222939,
-					"disabled": true
+					"sid": 708798003222939
 				},
 				{
 					"eventType": "block",
@@ -342,8 +358,7 @@
 							}
 						}
 					],
-					"sid": 810631491727927,
-					"disabled": true
+					"sid": 810631491727927
 				},
 				{
 					"eventType": "block",
@@ -411,8 +426,7 @@
 							}
 						}
 					],
-					"sid": 906246051259083,
-					"disabled": true
+					"sid": 906246051259083
 				},
 				{
 					"eventType": "block",
@@ -474,8 +488,7 @@
 							}
 						}
 					],
-					"sid": 137717026577456,
-					"disabled": true
+					"sid": 137717026577456
 				}
 			],
 			"sid": 789935286290525
@@ -654,7 +667,7 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
+			"disabled": true,
 			"title": "Floating Analog Joystick(fana)",
 			"description": "Controls for a floating(center on touch) based joystick. The method for hiding the control is arbitrary and you can do any way you want.",
 			"isActiveOnStart": true,
@@ -734,21 +747,6 @@
 							}
 						},
 						{
-							"id": "pin-to-object-properties",
-							"objectClass": "fanaPad",
-							"sid": 895480398035880,
-							"behaviorType": "Pin",
-							"parameters": {
-								"pin-to": "PlayerCollision",
-								"x": true,
-								"y": true,
-								"angle": true,
-								"width-type": "no",
-								"height-type": "no",
-								"z": false
-							}
-						},
-						{
 							"id": "create-object",
 							"objectClass": "System",
 							"sid": 898123067358024,
@@ -761,7 +759,8 @@
 							}
 						}
 					],
-					"sid": 170791019959281
+					"sid": 170791019959281,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -846,7 +845,8 @@
 							}
 						}
 					],
-					"sid": 593153565774724
+					"sid": 593153565774724,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -923,7 +923,8 @@
 							}
 						}
 					],
-					"sid": 288972171796182
+					"sid": 288972171796182,
+					"disabled": true
 				}
 			],
 			"sid": 351686995031280

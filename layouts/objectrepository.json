@@ -536,6 +536,17 @@
 								"default-controls": true,
 								"enabled": true
 							}
+						},
+						"MoveTo": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
 						}
 					},
 					"world": {
@@ -774,6 +785,35 @@
 						"y": 332,
 						"width": 128,
 						"height": 128,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "maptrigger",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 42,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 448,
+						"y": 512,
+						"width": 41.84195581531027,
+						"height": 41.84195581531027,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
