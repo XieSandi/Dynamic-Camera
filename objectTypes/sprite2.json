@@ -1,36 +1,30 @@
 {
-	"name": "fanaPad",
+	"name": "Sprite2",
 	"plugin-id": "Sprite",
-	"sid": 852964487607804,
+	"sid": 433429779873622,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Pin",
-			"name": "Pin",
-			"sid": 927769705647339
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 32,
-						"height": 32,
+						"width": 250,
+						"height": 250,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6762488,
+						"imageSpriteId": 5661175,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 643716152534675,
-				"name": "Default",
+				"sid": 843096332289856,
+				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

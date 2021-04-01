@@ -722,21 +722,42 @@
 							}
 						},
 						{
-							"id": "set-position",
-							"objectClass": "fanaPad",
-							"sid": 876454891663529,
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 231367157912198,
 							"parameters": {
-								"x": "Functions.ScaleX(touchID)",
-								"y": "Functions.ScaleY(touchID)"
+								"object-to-create": "fanaPad",
+								"layer": "\"HUD\"",
+								"x": "PlayerCollision.X",
+								"y": "PlayerCollision.Y",
+								"create-hierarchy": false
 							}
 						},
 						{
-							"id": "set-position-to-another-object",
-							"objectClass": "fanaStick",
-							"sid": 579422775442988,
+							"id": "pin-to-object-properties",
+							"objectClass": "fanaPad",
+							"sid": 895480398035880,
+							"behaviorType": "Pin",
 							"parameters": {
-								"object": "fanaPad",
-								"image-point-optional": "0"
+								"pin-to": "PlayerCollision",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 898123067358024,
+							"parameters": {
+								"object-to-create": "fanaStick",
+								"layer": "\"HUD\"",
+								"x": "PlayerCollision.X",
+								"y": "PlayerCollision.Y",
+								"create-hierarchy": false
 							}
 						}
 					],
@@ -848,22 +869,14 @@
 					],
 					"actions": [
 						{
-							"id": "set-position",
+							"id": "destroy",
 							"objectClass": "fanaPad",
-							"sid": 478309283936298,
-							"parameters": {
-								"x": "-1000",
-								"y": "0"
-							}
+							"sid": 772059955142698
 						},
 						{
-							"id": "set-position-to-another-object",
+							"id": "destroy",
 							"objectClass": "fanaStick",
-							"sid": 256664450942157,
-							"parameters": {
-								"object": "fanaPad",
-								"image-point-optional": "0"
-							}
+							"sid": 693975223469877
 						},
 						{
 							"id": "set-instvar-value",

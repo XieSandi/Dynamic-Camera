@@ -36,18 +36,6 @@
 			"includeSheet": "analogue"
 		},
 		{
-			"eventType": "include",
-			"includeSheet": "Moveto"
-		},
-		{
-			"eventType": "include",
-			"includeSheet": "Pathfinding"
-		},
-		{
-			"eventType": "comment",
-			"text": "Made by Viridino Studios (@ViridinoStudios)\n\nMateus Ferreira - Programmer\nTwitter: @BonzerKitten\nE-mail: ferreiramoreiramateus@gmail.com\n\nWesley Andrade - Artist\nTwitter: @andrart7\nE-mail: wesleymatos1989@gmail.com\n\nMade with the support of patrons on https://www.patreon.com/viridinostudios"
-		},
-		{
 			"eventType": "comment",
 			"text": "Setup the player by adding its graphics to the collider as a child."
 		},
@@ -402,7 +390,7 @@
 				{
 					"id": "is-overlapping-another-object",
 					"objectClass": "PlayerCollision",
-					"sid": 677060887350129,
+					"sid": 888403178019731,
 					"parameters": {
 						"object": "CameraZone"
 					}
@@ -722,6 +710,21 @@
 				}
 			],
 			"sid": 246040431934806
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "PlayerCollision",
+					"sid": 828345113270181,
+					"parameters": {
+						"object": "Sprite2"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 466012099459613
 		}
 	],
 	"sid": 349244344172511

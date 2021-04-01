@@ -87,6 +87,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Timeline",
+			"name": "Timeline",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -146,6 +154,14 @@
 			"type": "behavior",
 			"id": "Bullet",
 			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
 			"author": "Scirra",
 			"version": "r241",
 			"bundled": false
@@ -224,7 +240,6 @@
 			"PlayerGraphics",
 			"PlayerCollision",
 			"CameraZone",
-			"ScreenBorder",
 			"Keyboard",
 			"BackgroundElement",
 			"Key",
@@ -246,7 +261,9 @@
 			"fangStick",
 			"fangTXT",
 			"MobileAdvert",
-			"fanaPad"
+			"fanaPad",
+			"Timeline",
+			"Sprite2"
 		],
 		"subfolders": []
 	},
@@ -368,7 +385,9 @@
 		}
 	},
 	"timelines": {
-		"items": [],
+		"items": [
+			"mapmovement"
+		],
 		"subfolders": [
 			{
 				"items": [],

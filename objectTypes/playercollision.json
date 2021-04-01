@@ -29,6 +29,16 @@
 			"behaviorId": "EightDir",
 			"name": "8Direction",
 			"sid": 902635747925126
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 695014505955949
+		},
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 299485585940875
 		}
 	],
 	"effectTypes": [],
