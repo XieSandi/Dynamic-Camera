@@ -21,16 +21,6 @@
 					"parameters": {
 						"object": "movetoright"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 122821201265622,
-					"parameters": {
-						"variable": "trigger",
-						"comparison": 0,
-						"value": "0"
-					}
 				}
 			],
 			"actions": [
@@ -47,15 +37,6 @@
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 911040786973007
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 471504682081559,
-					"parameters": {
-						"variable": "trigger",
-						"value": "1"
-					}
 				}
 			],
 			"sid": 115510899467895
@@ -69,16 +50,6 @@
 					"sid": 683491460437195,
 					"parameters": {
 						"object": "movetoleft"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 993502345721579,
-					"parameters": {
-						"variable": "trigger",
-						"comparison": 0,
-						"value": "1"
 					}
 				}
 			],
@@ -96,15 +67,6 @@
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 821386198304959
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 944158538598849,
-					"parameters": {
-						"variable": "trigger",
-						"value": "0"
-					}
 				}
 			],
 			"sid": 161843852909866
