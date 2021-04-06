@@ -262,7 +262,15 @@
 		"subfolders": []
 	},
 	"autosaveData": null,
-	"containers": [],
+	"containers": [
+		{
+			"members": [
+				"PlayerCollision",
+				"PlayerGraphics"
+			],
+			"selectMode": "normal"
+		}
+	],
 	"families": {
 		"items": [],
 		"subfolders": []
@@ -270,7 +278,8 @@
 	"layouts": {
 		"items": [
 			"MainLevel",
-			"ObjectRepository"
+			"ObjectRepository",
+			"Layout 1"
 		],
 		"subfolders": []
 	},
@@ -425,7 +434,7 @@
 		"sampling": "nearest",
 		"downscaling": "medium",
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "progress-logo",
 		"preloadSounds": true,
 		"clearBackground": true,
 		"enhancedAccelerationPrecision": true,

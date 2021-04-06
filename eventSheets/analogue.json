@@ -224,7 +224,7 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
+			"disabled": true,
 			"title": "Float Angle Joystick(fang)",
 			"description": "Control for an angle floating(center on touch) based joystick. The method for hiding the controls is arbitraty. Feel free to use any method you want.",
 			"isActiveOnStart": true,
@@ -298,7 +298,8 @@
 							}
 						}
 					],
-					"sid": 708798003222939
+					"sid": 708798003222939,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -348,7 +349,8 @@
 							}
 						}
 					],
-					"sid": 810631491727927
+					"sid": 810631491727927,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -416,7 +418,8 @@
 							}
 						}
 					],
-					"sid": 906246051259083
+					"sid": 906246051259083,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -478,7 +481,8 @@
 							}
 						}
 					],
-					"sid": 137717026577456
+					"sid": 137717026577456,
+					"disabled": true
 				}
 			],
 			"sid": 789935286290525
@@ -657,7 +661,7 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": true,
+			"disabled": false,
 			"title": "Floating Analog Joystick(fana)",
 			"description": "Controls for a floating(center on touch) based joystick. The method for hiding the control is arbitrary and you can do any way you want.",
 			"isActiveOnStart": true,
@@ -737,6 +741,21 @@
 							}
 						},
 						{
+							"id": "pin-to-object-properties",
+							"objectClass": "fanaPad",
+							"sid": 571169837489175,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "PlayerCollision",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
 							"id": "create-object",
 							"objectClass": "System",
 							"sid": 898123067358024,
@@ -749,8 +768,7 @@
 							}
 						}
 					],
-					"sid": 170791019959281,
-					"disabled": true
+					"sid": 170791019959281
 				},
 				{
 					"eventType": "block",
@@ -835,8 +853,7 @@
 							}
 						}
 					],
-					"sid": 593153565774724,
-					"disabled": true
+					"sid": 593153565774724
 				},
 				{
 					"eventType": "block",
@@ -913,8 +930,7 @@
 							}
 						}
 					],
-					"sid": 288972171796182,
-					"disabled": true
+					"sid": 288972171796182
 				}
 			],
 			"sid": 351686995031280

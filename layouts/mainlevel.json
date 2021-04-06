@@ -275,7 +275,7 @@
 								"max-speed": 150,
 								"acceleration": 600,
 								"deceleration": 600,
-								"rotate-speed": 360,
+								"rotate-speed": 0,
 								"set-angle": true,
 								"stop-on-solids": true,
 								"enabled": true
@@ -362,7 +362,7 @@
 				{
 					"type": "maptrigger",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -391,7 +391,7 @@
 				{
 					"type": "maptrigger",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -420,7 +420,7 @@
 				{
 					"type": "maptrigger",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -449,7 +449,7 @@
 				{
 					"type": "maptrigger",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
